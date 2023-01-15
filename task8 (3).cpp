@@ -73,5 +73,5 @@ int border(int height,int x,int y)
         getch();    
     }
     cout << "outside";
-    getch();
+    getch():
 }
