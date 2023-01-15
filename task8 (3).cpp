@@ -1,74 +1,77 @@
 # include<iostream>
-using namespace std;
 #include<conio.h>
+#include<stdio.h>
+#include<cmath>
+#include<windows.h>
+using namespace std;
 
-int findBorder(int, int, int);
+int border(int height, int x, int y);
 
 int main()
 {
 
-    int height, xCor, yCor;
+    int height, x, y;
     cout <<"enter height: ";
     cin >> height;
 
     cout <<"enter x cordinate: ";
-    cin >> xCor;
+    cin >> x;
 
     cout <<"enter y cordinate: ";
-    cin >> yCor;
+    cin >> y;
 
 
-    findBorder(height, xCor, yCor);
+    border(height, x, y);
 
     getch();
 }
 
-int findBorder(int height,int xCor,int yCor)
+int border(int height,int x,int y)
 {
-    int x_boundary, y_boundary;
-    int base = height * 3;
-    int roof = height * 4;
+    
+    int h1 = height * 3;
+    int h2 = height * 4;
     
 
 
-    if ((xCor == 0 || xCor == base) && (yCor >= 0 && yCor <= height) )
+    if ((x == 0 || x == h1) && (y >= 0 && y <= height) )
     {
         cout << "border ";
-        return 0;    
+        getch();    
     }
-    if ((yCor == 0 ) && (xCor >= 0 && xCor <= base ) )
+    if ((y == 0 ) && (x >= 0 && x <= h1 ) )
     {
         cout << "border ";
-        return 0;    
+        getch();
     }
-    if ((yCor == height ) && ((xCor >= 0 && xCor <= height ) || (xCor >= height * 2 && xCor <= base)) )
+    if ((y == height ) && ((x >= 0 && x <= height ) || (x >= height * 2 && x <= h1)) )
     {
         cout << "border ";
-        return 0;    
+        getch();
     }
-    if ((xCor == height || xCor == height *2) && (yCor >= height ||  yCor <= height*2))
+    if ((x == height || x == height *2) && (y >= height ||  y <= height*2))
     {
         cout << "border ";
-        return 0;    
+        getch();    
     }
-    if ((yCor == roof) && (xCor >= height &&  xCor <= height*2))
+    if ((y == h2) && (x >= height &&  x <= height*2))
     {
         cout << "border ";
-        return 0;    
+        getch();    
     }
 
 
 
-    if ((xCor > 0 && xCor < base) && (yCor > 0 && yCor <height ) )
+    if ((x > 0 && x < h1) && (y > 0 && y <height ) )
     {
         cout << "inside ";
-        return 0;    
+        getch();    
     }
-    if ((xCor > height && xCor < height *2) && (yCor > 0 &&  yCor < roof))
+    if ((x > height && x < height *2) && (y > 0 &&  y < h2))
     {
         cout << "inside ";
-        return 0;    
+        getch();    
     }
     cout << "outside";
-    return 0;
+    getch();
 }
